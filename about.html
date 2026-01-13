@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="Styles.css" />
+</head>
+
+<body class="about-page">
+
+  <!-- HEADER (same as home) -->
+  <header class="header">
+    <div class="nav-container">
+
+      <a class="logo-link" href="index.html" aria-label="Home">
+        <span class="sigil-svg" aria-hidden="true">
+          <svg viewBox="0 0 36 36" width="34" height="34" role="img">
+            <rect
+              x="0.75"
+              y="0.75"
+              width="34.5"
+              height="34.5"
+              fill="rgba(255,255,255,0.04)"
+              stroke="rgba(255,255,255,0.12)"
+              stroke-width="1.5"
+            />
+            <text
+              x="18"
+              y="22"
+              text-anchor="middle"
+              font-size="13"
+              font-weight="800"
+              letter-spacing="0.22em"
+              fill="white"
+            >
+              AP
+            </text>
+          </svg>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="stage.html">Stage</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- PAGE WRAP keeps footer at bottom on short pages -->
+  <main class="page-wrap">
+
+    <!-- ABOUT uses same scroller layout as home -->
+    <section class="content about-content" id="about">
+      <div class="content-container">
+
+        <!-- ONE GLASS BOX AROUND SIDENAV + TEXT -->
+        <div class="content-shell">
+
+          <aside class="side-nav" aria-label="About sections">
+            <div class="side-nav-inner">
+              <a class="side-link" href="#a1">Education</a>
+              <a class="side-link" href="#a2">Principles</a>
+              <a class="side-link" href="#a3">Projects</a>
+              <a class="side-link" href="#a4">Contact</a>
+            </div>
+          </aside>
+
+          <div class="content-main">
+            <article class="content-section reveal" id="a1">
+              <h2>Education</h2>
+              <p>I am a second year at the University of Toronto’s Rotman Commerce program, expecting to graduate in April 2028. At Rotman, I am pursuing a Bachelor of Commerce, with a major in Finance & Economics, and a focus in Data Science. Having spent half of my life in Montreal, I am also fluent in French.</p>
+              <p>To further my learning, I’ve practiced financial modeling outside of class, onboarded the university’s premier equity research organisation (Vertige Investment Group) as the director of marketing, learnt basic web-development to create this portfolio, and learnt python programming to automate components of my financial analyses.</p>
+              <p>Throughout my education, I competed in various cases, ranging from finance cases which make use of valuations and assess the quality of your assumptions, to consulting and accounting cases. To me, case competitions were an opportunity to limit-test my presentation skills, as well as apply some of the technical skills I had worked to gather. Details regarding a few of these cases are available on the home page.</p>
+            </article>
+
+            <article class="content-section reveal" id="a2">
+              <h2>Principles</h2>
+              <p>I am a firm believer in continuous learning and development. I carry this core principle through my personal, and professional journeys. This principle has allowed and motivated me to extract a lesson from any situation.</p>
+              <p>In addition, I believe in absolute self-accountability. There is always something that could have been executed better on your end, which makes It the pragmatic approach to look internally for solutions even where the blame could technically reside elsewhere.</p>
+            </article>
+
+            <article class="content-section reveal" id="a3">
+              <h2>What I’m Doing Right Now</h2>
+              <p>My personal projects will be made available on a rolling basis starting in late January 2026 on the projects page. For early access, reach out through social media.</p>
+
+              <div class="focus">
+                <p><strong>Current focus:</strong> Completing Site</p>
+                <p><strong>Next:</strong> Automating Modeling with Python</p>
+              </div>
+            </article>
+
+            <!-- Contact MUST be reveal too if your CSS hides sections by default -->
+            <article class="content-section reveal" id="a4">
+              <h2>Contact</h2>
+
+              <p>The fastest way to reach me is through social platforms.</p>
+
+              <div class="social-grid">
+                <a class="social-item" href="#" target="_blank" rel="noopener">
+                  <span class="icon" aria-hidden="true">YT</span>
+                  <span class="social-text">
+                    <span class="social-name">YouTube</span>
+                    <span class="social-hint">Coming soon</span>
+                  </span>
+                </a>
+
+                <a class="social-item" href="https://www.linkedin.com/in/ariaman-pooramini/" target="_blank" rel="noopener">
+                  <span class="icon" aria-hidden="true">IN</span>
+                  <span class="social-text">
+                    <span class="social-name">LinkedIn</span>
+                    <span class="social-hint">Ariaman Pooramini</span>
+                  </span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (same as home) -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">© <span id="year"></span> Ariaman Pooramini</div>
+        <div class="footer-right">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // =========================
+    // Reveal (scroll-based)
+    // =========================
+    const revealEls = [...document.querySelectorAll(".reveal")];
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.18, rootMargin: "0px 0px -12% 0px" });
+
+    revealEls.forEach(el => io.observe(el));
+
+    // =========================
+    // ABOUT Scrollspy (active underline)
+    // =========================
+    const sideLinks = [...document.querySelectorAll(".side-link")];
+    const sections = sideLinks
+      .map(a => document.querySelector(a.getAttribute("href")))
+      .filter(Boolean);
+
+    function setActiveById(id){
+      sideLinks.forEach(a =>
+        a.classList.toggle("active", a.getAttribute("href") === "#" + id)
+      );
+    }
+
+    function onScroll(){
+      if (!sections.length) return;
+
+      const markerY = 160;
+      let bestId = sections[0].id;
+      let bestDist = Infinity;
+
+      for (const sec of sections){
+        const top = sec.getBoundingClientRect().top;
+        const dist = Math.abs(top - markerY);
+
+        if (top <= markerY + 160 && dist < bestDist){
+          bestDist = dist;
+          bestId = sec.id;
+        }
+      }
+
+      const nearBottom =
+        (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 40);
+
+      if (nearBottom) bestId = sections[sections.length - 1].id;
+
+      setActiveById(bestId);
+    }
+
+    sideLinks.forEach(a => {
+      a.addEventListener("click", () => {
+        const id = a.getAttribute("href").slice(1);
+        setActiveById(id);
+      });
+    });
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    onScroll();
+  </script>
+
+</body>
+</html>

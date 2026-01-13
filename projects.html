@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects</title>
+  <link rel="stylesheet" href="Styles.css" />
+</head>
+
+<!-- sticky footer layout -->
+<body class="projects-page" style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- HEADER (same as home) -->
+  <header class="header">
+
+    <div class="nav-container">
+
+      <a class="logo-link" href="index.html" aria-label="Home">
+        <span class="sigil-svg" aria-hidden="true">
+          <svg viewBox="0 0 36 36" width="34" height="34" role="img">
+            <rect
+              x="0.75"
+              y="0.75"
+              width="34.5"
+              height="34.5"
+              fill="rgba(255,255,255,0.04)"
+              stroke="rgba(255,255,255,0.12)"
+              stroke-width="1.5"
+            />
+            <text
+              x="18"
+              y="22"
+              text-anchor="middle"
+              font-size="13"
+              font-weight="800"
+              letter-spacing="0.22em"
+              fill="white"
+            >
+              AP
+            </text>
+          </svg>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="stage.html">Stage</a>
+      </nav>
+
+    </div>
+  </header>
+
+<div class="dev-strip">
+  The Projects page is under development. In the meantime, reach out through social media.
+  Details are available on the home page.
+</div>
+
+
+
+  <!-- make main take remaining height so footer sits at bottom -->
+  <main style="flex: 1;">
+
+    <!-- PROJECTS (uses your new classes) -->
+    <section class="projects">
+      <div class="projects-container">
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Project One</h3>
+          </div>
+          <div class="project-body">
+            <p>
+              Coming Soon.
+            </p>
+          </div>
+          <div class="project-foot">
+            <a class="card-link" href="#">View →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Project Two</h3>
+          </div>
+          <div class="project-body">
+            <p>
+              Coming Soon.
+            </p>
+          </div>
+          <div class="project-foot">
+            <a class="card-link" href="#">View →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Project Three</h3>
+          </div>
+          <div class="project-body">
+            <p>
+              Coming Soon.
+            </p>
+          </div>
+          <div class="project-foot">
+            <a class="card-link" href="#">View →</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-head">
+            <h3>Project Four</h3>
+          </div>
+          <div class="project-body">
+            <p>
+              Coming Soon.
+            </p>
+          </div>
+          <div class="project-foot">
+            <a class="card-link" href="#">View →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (same as home) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">© <span id="year"></span> Ariaman Pooramini</div>
+      <div class="footer-right">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
