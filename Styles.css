@@ -771,8 +771,12 @@ body.hero-loaded .scroll-down.hero-anim{ transition-delay: 220ms; }
 
 
   .about-page .side-link{
-    white-space: nowrap;
-    padding: 10px 12px;
+    font-size: 12px;        /* was 14px */
+    padding: 8px 10px;      /* smaller pill */
+    letter-spacing: 0;
+    white-space: nowrap;    /* keep single-line */
+    min-width: 0;           /* allow flex shrink */
+    max-width: 100%;
     margin: 0;
   }
 
@@ -1092,6 +1096,7 @@ body.hero-loaded .scroll-down.hero-anim{ transition-delay: 220ms; }
   font-size: 16px;
   line-height: 1.8;
 }
+
 
 
 
