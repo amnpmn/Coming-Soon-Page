@@ -1089,36 +1089,4 @@ body.hero-loaded .scroll-down.hero-anim{ transition-delay: 220ms; }
   line-height: 1.8;
 }
 
-/* =========================
-   ABOUT PAGE: horizontal scroll fix (mobile)
-========================= */
-
-.about-page .content-shell{
-  max-width: 100%;
-}
-
-/* Critical: allow grid children to shrink instead of forcing overflow */
-.about-page .content-shell > *{
-  min-width: 0;
-}
-
-.about-page .content-main{
-  min-width: 0;
-}
-
-/* Mobile: hard override layout + contain side-nav scrolling */
-@media (max-width: 900px){
-  .about-page .content-shell{
-    grid-template-columns: 1fr !important;
-  }
-
-  /* keep the horizontal scrolling *inside* the sidenav, not the whole page */
-  .about-page .side-nav{
-    overflow-x: auto;
-  }
-
-  .about-page .side-nav-inner{
-    max-width: 100%;
-  }
-}
 
