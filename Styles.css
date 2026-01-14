@@ -722,7 +722,7 @@ body.hero-loaded .scroll-down.hero-anim{ transition-delay: 220ms; }
   flex-direction: column;
 }
 
-/* ✅ Invisible spacer WITHOUT a real element */
+/* Invisible spacer WITHOUT a real element */
 .about-page .side-nav::before{
   content: "";
   display: block;
@@ -757,14 +757,18 @@ body.hero-loaded .scroll-down.hero-anim{ transition-delay: 220ms; }
   }
 
   .about-page .side-nav-inner{
-    position: relative;
-    top: 0;
+  position: relative;
+  top: 0;
 
-    display: flex;
-    gap: 14px;
-    overflow-x: auto;
-    padding: 10px 0;
-  }
+  display: flex;
+  flex-wrap: wrap;      /*  Fix Side Scroll Mobile */
+  gap: 10px;
+
+  overflow-x: visible;  /*  kill sideways scroll */
+  max-width: 100%;
+  padding: 10px 0;
+}
+
 
   .about-page .side-link{
     white-space: nowrap;
@@ -1088,5 +1092,6 @@ body.hero-loaded .scroll-down.hero-anim{ transition-delay: 220ms; }
   font-size: 16px;
   line-height: 1.8;
 }
+
 
 
